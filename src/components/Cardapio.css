@@ -1,0 +1,246 @@
+.btn-add button {
+    background-color: rgb(201, 34, 34);
+    margin-top: 10px;
+    padding: 15px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 720px;
+    margin: 20px auto;
+    width: 100%;
+    height: 10%;
+    list-style: none;
+}
+
+.menu li {
+    padding: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.title h2 {
+    font-size: 30px;
+    color: black;
+}
+
+.title span {
+    color: red;
+}
+
+.space-apresentation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.space-apresentation button {
+    background-color: rgb(201, 34, 34);
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.space-apresentation a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.img {
+    width: 400px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 55px;
+    border-radius: 8px;
+}
+
+.section-cards {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+
+.card {
+    margin-left: 20px;
+    width: 200px;
+    height: 150px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-card {
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+/* Responsividade da página início/index.html */
+
+@media only screen and (max-width: 750px) {
+
+    .space-apresentation {
+        flex-direction: column;
+    }
+
+    .text-apresentation {
+        margin-top: 15px;
+    }
+
+    .img-pizza {
+        margin-top: 15px;
+    }
+
+    .img {
+        width: 300px;
+        margin-left: 0;
+    }
+
+    .cards {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .card {
+        margin-top: 15px;
+    }
+}
+
+/* ---------------------------------------------- Pedidos ---------------------------------------------------*/
+
+.section-pedidos-cards {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-pedidos-cards span {
+    color: red;
+}
+
+.pedidos-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.item {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    width: 450px;
+    height: 100px;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-card-pedido {
+    margin-right: 15px;
+    border-radius: 5px;
+    width: 80px;
+}
+
+.img-add {
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.resultado-space {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+/* Responsividade da página pedido */
+
+@media only screen and (max-width: 750px) {
+
+    .item {
+        width: 300px;
+        height: 100px;
+    }
+
+    .section-pedidos-cards {
+        flex-direction: column;
+    }
+
+    .pedidos-cards {
+        width: 100%;
+    }
+
+    .img-add {
+        margin-right: 20px;
+    }
+
+    .resultado-space {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        padding: 0px 0px 20px 0px;
+    }
+
+}
+
+.section-projeto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explicacao {
+    width: 60%;
+}
+
+.explicacao h4 {
+    margin-top: 15px;
+}
