@@ -3,7 +3,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Inicio</h1>
+
+      <section class="title">
+        <h2>Cardápio Pizzaria</h2>
+      </section>
+      
     </div>
   );
 }

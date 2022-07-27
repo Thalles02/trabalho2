@@ -5,8 +5,8 @@ import imgDelete from "../img/lixeira.png";
 import imgLogo from "../img/logo.jpg";
 import './Cardapio.css';
 
-export default function Usuarios() {
-    const [usuarios, setUsuarios] = useState([]);
+export default function Crud_Itens() {
+    const [itens, setItens] = useState([]);
     const [id, setId] = useState("");
     const [nome, setNome] = useState("");
     const [sabor, setSabor] = useState("");
@@ -18,7 +18,7 @@ export default function Usuarios() {
     useEffect(() => {
         fetch(url + "item")
             .then((response) => response.json())
-            .then((data) => setUsuarios(data))
+            .then((data) => setItens(data))
             .catch((err) => console.log(err));
     }, [url]);
 
@@ -36,9 +36,9 @@ export default function Usuarios() {
 
     function editarDados(cod) {
         console.log(cod);
-        let usuario = usuarios.find(item => item.id === cod);
-        const { id, nome, sabor, preco } = usuario;
-        console.log(usuario);
+        let cardapitens = itens.find(item => item.id === cod);
+        const { id, nome, sabor, preco } = cardapitens;
+        console.log(cardapitens);
         setTipo("editar");
         setId(id);
         setNome(nome);
@@ -56,7 +56,7 @@ export default function Usuarios() {
                         sabor: sabor,
                         preco: preco,
                     })
-                    .then((response) => atualizaListaNovoUsuario(response))
+                    .then((response) => atualizaListaNovocardapitens(response))
                     .catch((err) => console.log(err));
             } else if (tipo === "editar") {
                 axios.put(url + "item/" + id, {
@@ -65,7 +65,7 @@ export default function Usuarios() {
                     sabor: sabor,
                     preco: preco,
                 })
-                    .then(response => atualizaListaUsuariosEditado(response))
+                    .then(response => atualizaListaitensEditado(response))
                     .catch((err) => console.log(err));
             }
         } else {
@@ -73,36 +73,36 @@ export default function Usuarios() {
         }
     }
 
-    function atualizaListaNovoUsuario(response) {
+    function atualizaListaNovocardapitens(response) {
         let { id, nome, sabor, preco } = response.data;
         let obj = { id: id, nome: nome, sabor: sabor, preco: preco };
-        let users = usuarios;
+        let users = itens;
         users.push(obj);
-        setUsuarios(users);
+        setItens(users);
         cancelarDados("");
     }
 
-    function atualizaListaUsuariosEditado(response) {
+    function atualizaListaitensEditado(response) {
         let { id } = response.data;
-        const index = usuarios.findIndex(item => item.id == id); //eslint-disable-line
-        let users = usuarios;
+        const index = itens.findIndex(item => item.id == id); //eslint-disable-line
+        let users = itens;
         users[index].nome = nome;
         users[index].sabor = sabor;
         users[index].preco = preco;
-        setUsuarios(users);
+        setItens(users);
         cancelarDados("");
     }
 
     function deletaDados(cod) {
         axios.delete(url + "item/" + cod).then(() => {
-            setUsuarios(usuarios.filter((item) => item.id !== cod))
+            setItens(itens.filter((item) => item.id !== cod))
         })
     }
 
     return (
         <div>
-            {usuarios
-                ? usuarios.map((item) => {
+            {itens
+                ? itens.map((item) => {
                     return (
                         <div key={item.id}>
                             <div class="pedidos-cards">
@@ -138,7 +138,7 @@ export default function Usuarios() {
             <div class="pedidos-cards">
                 <section class="btn-add">
                     <button type="button" onClick={novosDados}>
-                        Novo
+                        Novo sabor
                     </button>
                 </section>
 
