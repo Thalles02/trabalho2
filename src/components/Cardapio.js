@@ -142,42 +142,51 @@ export default function Crud_Itens() {
                     </button>
                 </section>
 
-                {tipo ? (
-                    <>
-                        <input
-                            type="text"
-                            name="txtNome"
-                            value={nome}
-                            onChange={(e) => {
-                                setNome(e.target.value);
-                            }}
-                        />
-                        <input
-                            type="text"
-                            name="txtsabor"
-                            value={sabor}
-                            onChange={(e) => {
-                                setSabor(e.target.value);
-                            }}
-                        />
-                        <input
-                            type="text"
-                            name="txtpreco"
-                            value={preco}
-                            onChange={(e) => {
-                                setPreco(e.target.value);
-                            }}
-                        />
-                        <button type="button" onClick={cancelarDados}>
-                            Cancelar
-                        </button>
-                        <button type="button" onClick={gravaDados}>
-                            Gravar
-                        </button>
-                    </>
-                ) : (
-                    false
-                )}
+                <section>
+                    {tipo ? (
+                        <>
+                            <input
+                                type="text"
+                                name="txtNome"
+                                value={nome}
+                                onChange={(e) => {
+                                    setNome(e.target.value);
+                                }}
+                            />
+                            <input
+                                type="text"
+                                name="txtsabor"
+                                value={sabor}
+                                onChange={(e) => {
+                                    setSabor(e.target.value);
+                                }}
+                            />
+                            <input
+                                type="text"
+                                name="txtpreco"
+                                value={preco}
+                                onChange={(e) => {
+                                    setPreco(e.target.value);
+                                }}
+                            />
+                            <br></br>
+                            <section class="btn-save">
+                                <button type="button" onClick={cancelarDados}>
+                                    Cancelar
+                                </button>
+                                <button type="button" onClick={gravaDados}>
+                                    Gravar
+                                </button>
+
+                            </section>
+
+                        </>
+                    ) : (
+                        false
+                    )}
+                </section>
+
+
             </div>
 
 
